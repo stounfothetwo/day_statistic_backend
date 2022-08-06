@@ -64,6 +64,8 @@ jobs:
       - name: Get branch name
         id: branch-name
         uses: tj-actions/branch-names@v5.4
+      
+      - run: echo ${{ steps.branch-name.outputs.current_branch }}
 
       - name: Build and push
         uses: docker/build-push-action@v3
